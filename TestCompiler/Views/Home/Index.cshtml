@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Chấm Code";
+}
+
+<h2>Chấm điểm mã nguồn C/C++</h2>
+
+<form method="post">
+    <div>
+        <label for="sourceCode">Mã nguồn:</label>
+        <textarea id="sourceCode" name="sourceCode" rows="10" cols="80"></textarea>
+    </div>
+
+    <div>
+        <label for="inputData">Dữ liệu đầu vào:</label>
+        <textarea id="inputData" name="inputData" rows="3" cols="80"></textarea>
+    </div>
+
+    <div>
+        <label for="expectedOutput">Đầu ra mong đợi:</label>
+        <textarea id="expectedOutput" name="expectedOutput" rows="3" cols="80"></textarea>
+    </div>
+
+    <div>
+        <label for="language">Ngôn ngữ:</label>
+        <select id="language" name="language">
+            <option value="c">C</option>
+            <option value="cpp">C++</option>
+        </select>
+    </div>
+
+    <div>
+        <button type="submit">Chấm điểm</button>
+    </div>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <h3>Kết quả:</h3>
+    <p>Trạng thái: @ViewBag.Result</p>
+    <p>Output: @ViewBag.Output</p>
+    <p>Error: @ViewBag.Error</p>
+}
